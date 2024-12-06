@@ -41,13 +41,16 @@
                                 Информация
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="#">Доставка и оплата</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Контактная информация</a></li>
+                                <li><a class="dropdown-item  text-white" href="{% url "app:about_delivery" %}">Доставка и оплата</a></li>
+                                <li><a class="dropdown-item  text-white" href="{% url "app:contacts" %}">Контактная информация</a></li>
                                 <li><a class="dropdown-item  text-white" href="{% url "app:about" %}">Про нас</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Поддержка</a>
                         </li>
                         {% if not user.is_authenticated %}
                             <li class="nav-item">

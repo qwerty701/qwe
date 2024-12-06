@@ -1,8 +1,6 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.contrib import auth, messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.cache import cache
 from django.db.models import Prefetch
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
@@ -11,6 +9,9 @@ from django.views.generic import CreateView, TemplateView, UpdateView
 from carts.models import Cart
 from common.mixins import CacheMixin
 from orders.models import Order, OrderItem
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 
 from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm
 
