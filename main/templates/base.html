@@ -50,7 +50,7 @@
                             <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Поддержка</a>
+                            <a class="nav-link text-white" href="{% url "chat:chat" %}">Поддержка</a>
                         </li>
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
