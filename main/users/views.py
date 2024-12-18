@@ -34,11 +34,11 @@ class UserLoginView(LoginView):
         if user:
             auth.login(self.request, user)
             if session_key:
-                # delete old authorized user carts
+                # удалить старые корзины авторизованных пользователей
                 forgot_carts = Cart.objects.filter(user=user)
                 if forgot_carts.exists():
                     forgot_carts.delete()
-                # add new authorized user carts from anonimous session
+                # добавление новых корзин авторизованных пользователей из анонимной сессии
                 Cart.objects.filter(session_key=session_key).update(user=user)
 
                 messages.success(self.request, f"{user.username}, Вы вошли в аккаунт")
@@ -85,7 +85,7 @@ class UserProfileView(LoginRequiredMixin, CacheMixin, UpdateView):
         return self.request.user
 
     def form_valid(self, form):
-        messages.success(self.request, "Профайл успешно обновлен")
+        messages.success(self.request, "Профиль успешно обновлен")
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -94,7 +94,7 @@ class UserProfileView(LoginRequiredMixin, CacheMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Home - Кабинет'
+        context['title'] = 'Hello World - Кабинет'
 
         # Можно вынести сам запрос в отдельный метод этого класса контроллера
         orders = Order.objects.filter(user=self.request.user).prefetch_related(
