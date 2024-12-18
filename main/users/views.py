@@ -47,7 +47,7 @@ class UserLoginView(LoginView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Home - Авторизация'
+        context['title'] = 'Hello World - Авторизация'
         return context
 
 
@@ -72,7 +72,7 @@ class UserRegistrationView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Home - Регистрация'
+        context['title'] = 'Hello World - Регистрация'
         return context
 
 
