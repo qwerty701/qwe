@@ -1,4 +1,4 @@
-# Task Tracker
+# Hello World
 
 Hello World - это Интернет магазин товаров для дома на базе Django.
 
